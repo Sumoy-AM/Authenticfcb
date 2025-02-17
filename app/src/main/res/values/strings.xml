@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Authenticfcb</string>
+
+    <string name="facebook_app_id">1569882824401064</string>
+    <string name="fb_login_protocol_scheme">fb1569882824401064</string>
+    <string name="facebook_client_token">51b3b4df7b1d38c9f860f4a34774e513</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "586120213563",
+    "project_id": "authenticfcb",
+    "storage_bucket": "authenticfcb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586120213563:android:ddaac94ea4e817c790d81e",
+        "android_client_info": {
+          "package_name": "com.example.authenticfcb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmUD_RrNBeLt6JTMiJPs06XfInLfaf_os"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
