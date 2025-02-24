@@ -38,6 +38,8 @@ dependencies {
     implementation libs.firebase.analytics
     implementation libs.firebase.auth
     testImplementation libs.junit
+    implementation libs.glide
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+    implementation libs.circleimageview
 }

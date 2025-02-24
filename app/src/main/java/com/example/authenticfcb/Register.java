@@ -1,6 +1,5 @@
 package com.example.authenticfcb;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,9 +10,6 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,8 +17,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
-    private EditText email;
-    private EditText password;
+
+    private EditText email, password;
     private Button Register;
     private FirebaseAuth auth;
 
@@ -31,11 +27,11 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-        email=findViewById(R.id.email);
-        password=findViewById(R.id.password);
-        Register=findViewById(R.id.Register);
-        auth=FirebaseAuth.getInstance();
+
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        Register = findViewById(R.id.Register);
+        auth = FirebaseAuth.getInstance();
 
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,17 +40,13 @@ public class Register extends AppCompatActivity {
                 String txt_password = password.getText().toString();
 
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
-                    Toast.makeText(Register.this, "Empy Credencials", Toast.LENGTH_SHORT).show();
-                }
-                else if (txt_password.length() < 6) {
+                    Toast.makeText(Register.this, "Empty Credentials", Toast.LENGTH_SHORT).show();
+                } else if (txt_password.length() < 6) {
                     Toast.makeText(Register.this, "Password too short", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     registerUser(txt_email, txt_password);
                 }
             }
-        });
-            return insets;
         });
     }
 
@@ -62,8 +54,8 @@ public class Register extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-            if (task.isSuccessful()){
-                Toast.makeText(Register.this, "Register is Successful", Toast.LENGTH_SHORT).show();
+                if (task.isSuccessful()) {
+                    Toast.makeText(Register.this, "Register Successful", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(Register.this, "Register Failed", Toast.LENGTH_SHORT).show();
                 }
